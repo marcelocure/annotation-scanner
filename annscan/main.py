@@ -7,7 +7,6 @@ import metadata
 import io_file
 import scanner
 import charts
-import matplotlib.pyplot as plt
 
 
 def parse_input(argv):
@@ -26,7 +25,7 @@ def parse_input(argv):
                             help='Path of the project to be scanned')
 
     args = arg_parser.parse_args()
-    
+
     project_path = args.PROJECTPATH
     return project_path
 
@@ -37,7 +36,7 @@ def main(argv):
     total_files = len(file_list)
     print('{0} java files'.format(total_files))
     occurrencies = scanner.scan_annotation(file_list)
-    print('{0} java files containing @Refactoring annotation'.format(occurrencies))
+    print('{0} java files containing annotation'.format(occurrencies))
     charts.generate_chart(total_files, occurrencies)
 
 
