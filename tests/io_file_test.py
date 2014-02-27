@@ -9,7 +9,7 @@ class Test(object):
     def test_get_file_content_one_line(self, file_to_read):
         content = io_file.get_file_content(file_to_read)
         assert len(content) == 1
-        assert content[0] == 'test file . java'
+        assert content[0] == 'test file . java @Refactoring'
 
     @parametrize('file_to_read', ['tests/resources/testfiletwolines.java'])
     def test_get_file_content_two_lines(self, file_to_read):
